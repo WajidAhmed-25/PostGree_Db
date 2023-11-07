@@ -9,4 +9,6 @@ router.post("/", bookController.create)
 router.put("/:id", bookController.updateById)
 router.delete("/:id", bookController.deleteById)
 
+router.post('/reg',bookController.register_doctor)
+
 module.exports = router

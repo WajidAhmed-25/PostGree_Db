@@ -35,6 +35,25 @@ const bookController = {
             res.json({msg: error.msg})
         }
     },
+
+    register_doctor: async(req, res) => {
+        try {
+            const { oc_reg_first,doc_reg_last,doc_reg_email,doc_reg_phone,doc_reg_password,doc_reg_code,doc_reg_gender} = req.body
+
+            const sql = 'INSERT INTO doctor_register (doc_reg_first, doc_reg_last,doc_reg_email,doc_reg_phone,doc_reg_password,doc_reg_code,doc_reg_gender ) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *';
+
+            const { rows } = await postgre.query(sql, [oc_reg_first,doc_reg_last,doc_reg_email,doc_reg_phone,doc_reg_password,doc_reg_code,doc_reg_gender])
+
+            res.json({msg: "OK", data: rows[0]})
+
+        } catch (error) {
+            res.json({msg: error.msg})
+        }
+    },
+
+     
+  
+
     updateById: async(req, res) => {
         try {
             const { name, price } = req.body
