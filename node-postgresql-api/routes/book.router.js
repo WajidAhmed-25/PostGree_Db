@@ -10,5 +10,6 @@ router.put("/:id", bookController.updateById)
 router.delete("/:id", bookController.deleteById)
 
 router.post('/',bookController.register_doctor)
+router.get('/doc',bookController.getAllDoctors)
 
 module.exports = router
