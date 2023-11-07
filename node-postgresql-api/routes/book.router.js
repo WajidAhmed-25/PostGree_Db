@@ -9,6 +9,8 @@ router.post("/post", bookController.create)
 router.put("/:id", bookController.updateById)
 router.delete("/:id", bookController.deleteById)
 
+// bilal lassan
+
 router.post('/',bookController.register_doctor)
 router.get('/doc',bookController.getAllDoctors)
 
