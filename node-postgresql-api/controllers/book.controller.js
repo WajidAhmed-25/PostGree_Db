@@ -10,7 +10,6 @@ const bookController = {
     },
 
 
-
     getAllDoctors: async(req, res) => {
         try {
             const { rows } = await postgre.query("select * from doctor_register")

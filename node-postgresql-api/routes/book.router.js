@@ -11,7 +11,7 @@ router.delete("/:id", bookController.deleteById)
 
 // bilal lassan
 
-router.post('/',bookController.register_doctor)
+router.post('/doctors',bookController.register_doctor)
 router.get('/doc',bookController.getAllDoctors)
 
 module.exports = router
